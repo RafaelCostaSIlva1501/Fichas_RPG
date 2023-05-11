@@ -114,6 +114,22 @@ inputFile.addEventListener("change", function() {
 saveButton.addEventListener("click", function() {
 });
     </script>
+
+<script>
+  window.addEventListener("orientationchange", function() {
+    // Redimensiona a viewport
+    var viewport = document.querySelector("meta[name=viewport]");
+    viewport.setAttribute("content", "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0");
+
+    // Gira a tela para a orientação correta
+    if (window.orientation == 90 || window.orientation == -90) {
+      document.body.style.transform = "rotate(90deg)";
+    } else {
+      document.body.style.transform = "rotate(0deg)";
+    }
+  });
+</script>
+
     
 </body>
 </html>
