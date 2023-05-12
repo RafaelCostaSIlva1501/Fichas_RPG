@@ -15,11 +15,14 @@ body,html{
 #container{
     display: flex;
     align-items: center;
+
+    height: 120px;
+    border: 1px solid green;
 }
 
 #container > .dados{
     position: relative;
-    top: 30px;
+    top: 10px;
     left: 140px;
     
     width: 60px;

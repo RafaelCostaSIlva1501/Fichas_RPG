@@ -3,30 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fichas 01</title>
     <link rel="stylesheet" href="ficha01.css">
     <link rel="stylesheet" href="cores-dados.css">
 </head>
 <body>
-  <!-- rodar tela-->>
-  <script>
-    window.addEventListener("orientationchange", function() {
-      // Redimensiona a viewport
-      var viewport = document.querySelector("meta[name=viewport]");
-      viewport.setAttribute("content", "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0");
-  
-      // Gira a tela para a orientação correta
-      if (window.orientation == 90 || window.orientation == -90) {
-        document.body.style.transform = "rotate(90deg)";
-      } else {
-        document.body.style.transform = "rotate(0deg)";
-      }
-    });
-  </script>
-
-
-   <!-- -->
+      <!-- Foto de perfil e gerador de dados-->
     <div id="container">
       <!-- HTML da foto de perfil -->
         <img id="foto">
@@ -106,6 +89,7 @@
 
     </script>
 
+    <!-- JavaScript da foto de perfil-->
     <script>
         const inputFile = document.getElementById("add-foto");
 const preview = document.getElementById("foto");
@@ -132,5 +116,14 @@ saveButton.addEventListener("click", function() {
 });
     </script>
     
+    <!-- HTML da barra de status-->
+    <div class="health-bar-container">
+      <div class="health-bar"></div>
+    </div>
+    
+    <div class="buttons-container">
+      <button id="increase-btn">+</button>
+      <button id="decrease-btn">-</button>
+    </div>
 </body>
 </html>
