@@ -65,3 +65,44 @@ body,html{
     text-align: center;
 }
 
+.container-barra{
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #ffffff;
+}
+
+.container-barra > .barra-status{
+    border: 1px solid #ffffff;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+    width: 120px;
+    height: 10px;
+    margin: 0px 20px;
+}
+
+.container-barra > .container-add-sub{
+    display: flex;
+    justify-content: space-around;
+
+ 
+    width: 120px;
+    height: 19px;
+    margin: 5px 20px;
+}
+
+.container-barra > .container-add-sub > #sub{
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+}
+
+.container-barra > .container-add-sub > #add{
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+}
+

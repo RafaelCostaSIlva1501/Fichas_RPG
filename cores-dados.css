@@ -8,7 +8,7 @@
 
     width: 100px;
     height: 100px;
-    margin: 30px;
+    margin: 30px 20px;
 
     position: fixed;
     top: -3%;
@@ -30,7 +30,7 @@
     
     width: 102px;
     height: 102px;
-    margin: 31px;
+    margin: 31px 21px;
     position: fixed;
     top: -3%;
 }
