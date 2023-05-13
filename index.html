@@ -118,12 +118,47 @@ saveButton.addEventListener("click", function() {
     
     <!-- HTML da barra de status-->
     <div class="container-barra">
-      <div class="barra-status"></div>
+      <div class="manter-barra">
+        <div class="barra-status"></div>
+      </div>
 
       <div class="container-add-sub">
         <button id="sub">-</button>
         <button id="add">+</button>
       </div>
     </div>
+
+    <script>
+      const healthBar = document.querySelector('.barra-status');
+        const increaseBtn = document.querySelector('#add');
+        const decreaseBtn = document.querySelector('#sub');
+        let health = 100;
+        let maxHealth = 100;
+
+        function updateHealthBar() {
+          let healthRatio = health / maxHealth;
+          let healthBarWidth = healthRatio * 100;
+          healthBar.style.width = `${healthBarWidth}%`;
+        }
+
+        increaseBtn.addEventListener('click', () => {
+          health += 10;
+          if (health > maxHealth) {
+            health = maxHealth;
+          }
+          updateHealthBar();
+        });
+
+        decreaseBtn.addEventListener('click', () => {
+          health -= 10;
+          if (health < 0) {
+            health = 0;
+          }
+          updateHealthBar();
+        });
+
+updateHealthBar();
+    </script>
+
 </body>
 </html>

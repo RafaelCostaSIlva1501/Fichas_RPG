@@ -72,7 +72,7 @@ body,html{
     border: 1px solid #ffffff;
 }
 
-.container-barra > .barra-status{
+.container-barra > .manter-barra{
     border: 1px solid #ffffff;
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -80,6 +80,15 @@ body,html{
     width: 120px;
     height: 10px;
     margin: 10px 20px 0px 20px;
+}
+
+.container-barra > .manter-barra > .barra-status{
+    width: 120px;
+    height: 10px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: green;
+    transition: width 0.2s ease-in-out;
 }
 
 .container-barra > .container-add-sub{
@@ -105,5 +114,7 @@ body,html{
     text-align: center;
     font-weight: bolder;
 }
+
+
 
 
