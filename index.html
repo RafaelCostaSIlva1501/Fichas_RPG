@@ -136,8 +136,8 @@ saveButton.addEventListener("click", function() {
         let maxHealth = 100;
 
         function updateHealthBar() {
-          let healthRatio = health / maxHealth;
-          let healthBarWidth = healthRatio * 100;
+          var healthRatio = health / maxHealth;
+          var healthBarWidth = healthRatio * 100;
           healthBar.style.width = `${healthBarWidth}%`;
         }
 
@@ -156,7 +156,6 @@ saveButton.addEventListener("click", function() {
           }
           updateHealthBar();
         });
-
 updateHealthBar();
     </script>
 

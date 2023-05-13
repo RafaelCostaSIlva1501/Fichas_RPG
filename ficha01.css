@@ -74,31 +74,32 @@ body,html{
 
 .container-barra > .manter-barra{
     border: 1px solid #ffffff;
-    border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
 
     width: 120px;
     height: 10px;
     margin: 10px 20px 0px 20px;
+
+    text-align: center;
+    font-size: 11px;
+    color: #ffffff;
 }
 
 .container-barra > .manter-barra > .barra-status{
     width: 120px;
     height: 10px;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    background-color: green;
-    transition: width 0.2s ease-in-out;
+    border-bottom-right-radius: 10px;
+    background-color: #ff0000;
+    transition: width 0.50s ;
 }
 
 .container-barra > .container-add-sub{
     display: flex;
     justify-content: space-around;
 
- 
     width: 120px;
     height: 19px;
-    margin: 5px 20px;
+    margin: 11px 20px;
 }
 
 .container-barra > .container-add-sub > #sub, #add{
