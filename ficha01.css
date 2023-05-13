@@ -60,8 +60,8 @@ body,html{
     width: 40px;
     height: 18px;
     margin: 20px auto;
-    border: 1px solid white;
-    color: white;
+    border: 1px solid #ffffff;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -79,7 +79,7 @@ body,html{
 
     width: 120px;
     height: 10px;
-    margin: 0px 20px;
+    margin: 10px 20px 0px 20px;
 }
 
 .container-barra > .container-add-sub{
@@ -92,17 +92,18 @@ body,html{
     margin: 5px 20px;
 }
 
-.container-barra > .container-add-sub > #sub{
-    width: 15px;
+.container-barra > .container-add-sub > #sub, #add{
+    cursor: pointer;
+
+    width: 30px;
     height: 15px;
 
-    border-radius: 50%;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bolder;
 }
 
-.container-barra > .container-add-sub > #add{
-    width: 15px;
-    height: 15px;
-
-    border-radius: 50%;
-}
 
