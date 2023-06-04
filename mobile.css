@@ -62,7 +62,7 @@ body{
 }
 
 #foto{
-    border: 3px solid rgb(255, 0, 0);
+    border: 3px solid #ffffff;
     width: 200px;
     height: 200px;
     border-radius: 50%;

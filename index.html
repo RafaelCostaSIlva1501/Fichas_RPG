@@ -20,7 +20,7 @@
         <!--Adicionar foto de perfil-->
         <div class="container-foto-txt">
             <span class="add-foto"><img id="foto"><input type="file" id="add-foto"></span>
-            <p id="exibirNome" onclick="nome()">Nome do seu personagem<p>
+            <p id="exibirNome" onclick="nome()" contenteditable="true">Nome do seu personagem</p>
         </div>
 
         <!--Botão para abrir o menu de dados do personagem-->
@@ -29,7 +29,7 @@
         <!--Dados do personagem-->
         <div class="perfil-dado" id="perfil">
             <div class="nome-jog">
-                <span id="jogador" onclick="jogador()">Jogador:<span id="Ijogador"></span></span>
+                <span id="jogador" onclick="jogador()" contenteditable="true">Jogador:<span id="Ijogador"></span></span>
             </div>
 
             <hr>
@@ -37,24 +37,24 @@
             <div class="fisico-informações">
                 <div class="fisico">
                     <h4>Características físicas</h4>
-                    <span id="altura" onclick="altura()">Altura:<span id="Ialtura"></span></span> <br>
+                    <span id="altura" onclick="altura()" contenteditable="true">Altura:<span id="Ialtura"></span></span> <br>
 
-                    <span id="cabelo" onclick="cabelo()">Cabelo:<span id="Icabelo"></span></span> <br>
+                    <span id="cabelo" onclick="cabelo()" contenteditable="true">Cabelo:<span id="Icabelo"></span></span> <br>
 
-                    <span id="olhos" onclick="olhos()">Olhos:<span id="Iolhos"></span></span> <br>
+                    <span id="olhos" onclick="olhos()" contenteditable="true">Olhos:<span id="Iolhos"></span></span> <br>
 
-                    <span id="pele" onclick="pele()">Pele:<span id="Ipele"></span></span> <br>
+                    <span id="pele" onclick="pele()" contenteditable="true">Pele:<span id="Ipele"></span></span> <br>
 
-                    <span id="sexo" onclick="sexo()">Sexo:<span id="Isexo"></span></span> <br>
+                    <span id="sexo" onclick="sexo()" contenteditable="true">Sexo:<span id="Isexo"></span></span> <br>
                 </div>
 
                 <div class="informações">
                     <h4>Informações</h4>
-                    <span id="profissão" onclick="profissão()">Profissão:<span id="Iprofissão"></span></label> <br>
+                    <span id="profissão" onclick="profissão()" contenteditable="true">Profissão:<span id="Iprofissão"></span></span> <br>
 
-                    <span id="classe" onclick="classe()">Classe:<span id="Iclasse"></span></span> <br>
+                    <span id="classe" onclick="classe()" contenteditable="true">Classe:<span id="Iclasse"></span></span> <br>
 
-                    <span id="idade" onclick="idade()">Idade:<span id="Iidade"></span></span> 
+                    <span id="idade" onclick="idade()" contenteditable="true">Idade:<span id="Iidade"></span></span> 
                 </div>
                
             </div>
@@ -62,9 +62,15 @@
             <hr>
 
             <div class="perso">
-                <span for="Ipersonalidade" id="personalidade" onclick="personalidade()">Personalidade: <br> <span id="Ipersonalidade"></span></span> 
+                <span for="Ipersonalidade" id="personalidade" onclick="personalidade()" contenteditable="true">Personalidade: <br> <span id="Ipersonalidade"></span></span> 
             </div>
 
+            <hr>
+
+            <div class="hist">
+                <span id="historia" onclick="historia()" contenteditable="true">História: <br> <span id="Ihistoria"></span></span> 
+            </div>
+            
         </div>
     </div>
 
