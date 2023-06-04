@@ -12,9 +12,9 @@ html{
 }
 
 body{
-    display: block;
-    margin: auto;
-    width: min-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #dadosRolagem{
