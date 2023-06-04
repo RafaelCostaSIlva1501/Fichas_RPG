@@ -53,7 +53,7 @@ body{
 
 .container-foto-txt p{
     border-bottom: 1px solid #ffffff42;
-    font-size: 2em;
+    font-size: 25px;
     margin: 5px;
     width: max-content;
 }
@@ -88,7 +88,6 @@ body{
 .perfil-dado{
     display: block;
     border: 1px solid white;
-    width: 95vw;
     padding: 10px;
     font-size: 20px;
     line-height: 35px;
