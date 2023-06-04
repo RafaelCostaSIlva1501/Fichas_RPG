@@ -6,6 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fichas</title>
     <link rel="stylesheet" href="mobile.css">
+     <script>
+        // Função para salvar os dados no Local Storage
+        function salvarDados() {
+            // Recupere os dados dos elementos HTML
+            var nome = document.getElementById('exibirNome').innerHTML;
+            var jogador = document.getElementById('Ijogador').innerHTML;
+            var idade = document.getElementById('Iidade').innerHTML;
+            var altura = document.getElementById('Ialtura').innerHTML;
+            var olhos = document.getElementById('Iolhos').innerHTML;
+            var cabelo = document.getElementById('Icabelo').innerHTML;
+            var pele = document.getElementById('Ipele').innerHTML;
+            var sexo = document.getElementById('Isexo').innerHTML;
+            var personalidade = document.getElementById('Ipersonalidade').innerHTML;
+            var profissao = document.getElementById('Iprofissão').innerHTML;
+            var classe = document.getElementById('Iclasse').innerHTML;
+    
+            // Salve os dados no Local Storage
+            localStorage.setItem('nome', nome);
+            localStorage.setItem('jogador', jogador);
+            localStorage.setItem('idade', idade);
+            localStorage.setItem('altura', altura);
+            localStorage.setItem('olhos', olhos);
+            localStorage.setItem('cabelo', cabelo);
+            localStorage.setItem('pele', pele);
+            localStorage.setItem('sexo', sexo);
+            localStorage.setItem('personalidade', personalidade);
+            localStorage.setItem('profissao', profissao);
+            localStorage.setItem('classe', classe);
+        }
+    
+        // Função para carregar os dados do Local Storage
+        function carregarDados() {
+            // Recupere os dados do Local Storage
+            var nome = localStorage.getItem('nome');
+            var jogador = localStorage.getItem('jogador');
+            var idade = localStorage.getItem('idade');
+            var altura = localStorage.getItem('altura');
+            var olhos = localStorage.getItem('olhos');
+            var cabelo = localStorage.getItem('cabelo');
+            var pele = localStorage.getItem('pele');
+            var sexo = localStorage.getItem('sexo');
+            var personalidade = localStorage.getItem('personalidade');
+            var profissao = localStorage.getItem('profissao');
+            var classe = localStorage.getItem('classe');
+    
+            // Atualize os elementos HTML com os dados carregados
+            document.getElementById('exibirNome').innerHTML = nome;
+            document.getElementById('Ijogador').innerHTML = jogador;
+            document.getElementById('Iidade').innerHTML = idade;
+            document.getElementById('Ialtura').innerHTML = altura;
+            document.getElementById('Iolhos').innerHTML = olhos;
+            document.getElementById('Icabelo').innerHTML = cabelo;
+            document.getElementById('Ipele').innerHTML = pele;
+            document.getElementById('Isexo').innerHTML = sexo;
+            document.getElementById('Ipersonalidade').innerHTML = personalidade;
+            document.getElementById('Iprofissão').innerHTML = profissao;
+            document.getElementById('Iclasse').innerHTML = classe;
+        }
+    
+        // Carregue os dados ao carregar a página
+        window.onload = function() {
+            carregarDados();
+        };
+    </script>
 </head>
 <body>
 
@@ -204,103 +268,5 @@
         }
     </script>   
 
-    <script>
-        function setCookie(name, value, days) {
-            var expires = "";
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + (value || "") + expires + "; path=/";
-        }
-
-        function getCookie(name) {
-            var nameEQ = name + "=";
-            var ca = document.cookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1, c.length);
-                }
-                if (c.indexOf(nameEQ) == 0) {
-                    return c.substring(nameEQ.length, c.length);
-                }
-            }
-            return null;
-        }
-
-        function eraseCookie(name) {
-            document.cookie = name + "=; Max-Age=-99999999; path=/";
-        }
-
-        function salvarDados() {
-            var nome = document.getElementById('exibirNome').innerHTML;
-            var jogador = document.getElementById('Ijogador').innerHTML;
-            var idade = document.getElementById('Iidade').innerHTML;
-            var altura = document.getElementById('Ialtura').innerHTML;
-            var olhos = document.getElementById('Iolhos').innerHTML;
-            var cabelo = document.getElementById('Icabelo').innerHTML;
-            var pele = document.getElementById('Ipele').innerHTML;
-            var sexo = document.getElementById('Isexo').innerHTML;
-            var personalidade = document.getElementById('Ipersonalidade').innerHTML;
-            var profissao = document.getElementById('Iprofissão').innerHTML;
-            var classe = document.getElementById('Iclasse').innerHTML;
-            setCookie("nome", nome, 365);
-            setCookie("jogador", jogador, 365);
-            setCookie("idade", idade, 365);
-            setCookie("altura", altura, 365);
-            setCookie("olhos", olhos, 365);
-            setCookie("cabelo", cabelo, 365);
-            setCookie("pele", pele, 365);
-            setCookie("sexo", sexo, 365);
-            setCookie("personalidade", personalidade, 365);
-            setCookie("profissao", profissao, 365);
-            setCookie("classe", classe, 365);
-        }
-
-        function carregarDados() {
-            var nome = getCookie("nome");
-            var jogador = getCookie("jogador");
-            var idade = getCookie("idade");
-            var altura = getCookie("altura");
-            var olhos = getCookie("olhos");
-            var cabelo = getCookie("cabelo");
-            var pele = getCookie("pele");
-            var sexo = getCookie("sexo");
-            var personalidade = getCookie("personalidade");
-            var profissao = getCookie("profissao");
-            var classe = getCookie("classe");
-            document.getElementById('exibirNome').innerHTML = nome || "";
-            document.getElementById('Ijogador').innerHTML = jogador || "";
-            document.getElementById('Iidade').innerHTML = idade || "";
-            document.getElementById('Ialtura').innerHTML = altura || "";
-            document.getElementById('Iolhos').innerHTML = olhos || "";
-            document.getElementById('Icabelo').innerHTML = cabelo || "";
-            document.getElementById('Ipele').innerHTML = pele || "";
-            document.getElementById('Isexo').innerHTML = sexo || "";
-            document.getElementById('Ipersonalidade').innerHTML = personalidade || "";
-            document.getElementById('Iprofissão').innerHTML = profissao || "";
-            document.getElementById('Iclasse').innerHTML = classe || "";
-        }
-
-        function apagarCookies() {
-            eraseCookie("nome");
-            eraseCookie("jogador");
-            eraseCookie("idade");
-            eraseCookie("altura");
-            eraseCookie("olhos");
-            eraseCookie("cabelo");
-            eraseCookie("pele");
-            eraseCookie("sexo");
-            eraseCookie("personalidade");
-            eraseCookie("profissao");
-            eraseCookie("classe");
-        }
-
-        window.onload = function() {
-            carregarDados();
-        };
-    </script>
 </body>
 </html>
