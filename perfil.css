@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.container-perfil > #foto{
+    border: 1px solid red;
+
+    width: 20px;
+    height: 20px;
+}
+
+.container-perfil > .add-foto{
+    border: 1px solid red;
+
+    width: 20px;
+    height: 20px;
+}

@@ -4,160 +4,204 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fichas 01</title>
-    <link rel="stylesheet" href="ficha01.css">
-    <link rel="stylesheet" href="cores-dados.css">
+    <title>Fichas</title>
+    <link rel="stylesheet" href="mobile.css">
 </head>
 <body>
-      <!-- Foto de perfil e gerador de dados-->
-    <div id="container">
-      <!-- HTML da foto de perfil -->
-        <img id="foto">
-        <label for="add-foto" id="perso-add-foto"><input type="file" id="add-foto" style="display: none;"></label>
 
-        <!-- HTML do gerador de dados -->
-        <div id="d4" class="dados">
-          <button class="btn-dado" onclick="gerard4()">4</button>
+    <img src="imagens/D20_icon.png" alt="" id="dadosRolagem" onclick="telaDados()">
+    <div id="dadosTela">
+        <img src="imagens/D20_icon.png" alt="" id="dadosRolagem" onclick="telaDados()">
+    </div>
 
-          <div id="result-d4" class="valor-dado"></div>
+    <!--Foto de Perfil-->
+    <div class="container-perfil">
+
+        <!--Adicionar foto de perfil-->
+        <div class="container-foto-txt">
+            <label for="add-foto" class="add-foto"><img id="foto"><input type="file" id="add-foto"></label>
+            <p id="exibirNome" onclick="nome()">Insira o nome do seu personagem<p>
         </div>
 
-        <div id="d6" class="dados">
-          <button onclick="gerard6()" class="btn-dado">6</button>
+        <!--Botão para abrir o menu de dados do personagem-->
+        <div class="perfil-btn-dado" onclick="abrirMenu()"></div>
 
-          <div id="result-d6" class="valor-dado"></div>
-        </div>
+        <!--Dados do personagem-->
+        <div class="perfil-dado" id="perfil">
+            <div class="nome-idade">
+                <label for="jogador" id="jogador" onclick="jogador()">Jogador:<span id="Ijogador"></span></label>
+            </div>
 
-        <div id="d8" class="dados">
-          <button onclick="gerard8()" class="btn-dado">8</button>
+            <hr>
 
-          <div id="result-d8" class="valor-dado"></div>
-        </div>
+            <div class="fisico-personalidade">
+                <div class="fisico">
+                    <h4>Características físicas</h4>
+                    <label for="Ialtura" id="altura" onclick="altura()">Altura:<span id="Ialtura"></span></label> <br>
 
-        <div id="d10" class="dados">
-          <button onclick="gerard10()" class="btn-dado">10</button>
+                    <label for="Icabelo" id="cabelo" onclick="cabelo()">Cabelo:<span id="Icabelo"></span></label> <br>
 
-          <div id="result-d10" class="valor-dado"></div>
-        </div>
+                    <label for="Iolhos" id="olhos" onclick="olhos()">Olhos:<span id="Iolhos"></span></label> <br>
 
-        <div id="d12" class="dados">
-          
+                    <label for="Ipele" id="pele" onclick="pele()">Pele:<span id="Ipele"></span></label> <br>
 
-          <button onclick="gerard12()" class="btn-dado">12</button>
+                    <label for="Isexo" id="sexo" onclick="sexo()">Sexo:<span id="Isexo"></span></label> <br>
+                </div>
 
-          <div id="result-d12" class="valor-dado"></div>
-        </div>
+                <div class="informações">
+                    <h4>Informações</h4>
+                    <label for="Iprofissão" id="profissão" onclick="profissão()">Profissão:<span id="Iprofissão"></span></label> <br>
 
-        <div id="d20" class="dados">
-          <button onclick="gerard20()" class="btn-dado">20</button>
+                    <label for="Iclasse" id="classe" onclick="classe()">Classe:<span id="Iclasse"></span></label> <br>
 
-          <div id="result-d20" class="valor-dado"></div>
+                    <label for="Iidade" id="idade" onclick="idade()">Idade:<span id="Iidade"></span></label> 
+                </div>
+               
+            </div>
+
+            <hr>
+
+            <div class="perso">
+                <label for="Ipersonalidade" id="personalidade" onclick="personalidade()">Personalidade: <br> <span id="Ipersonalidade"></span></label> 
+            </div>
+
         </div>
     </div>
 
-    <!-- JavaScript do gerador de dados -->
-    <script>
-      function gerard4(){
-        var d4 = Math.floor(Math.random() * 4) + 1;
-        document.getElementById("result-d4").innerHTML = d4;
-      }
-
-      function gerard6(){
-        var d6 = Math.floor(Math.random() * 6) + 1;
-        document.getElementById("result-d6").innerHTML = d6;
-      }
-
-      function gerard8(){
-        var d8 = Math.floor(Math.random() * 8) + 1;
-        document.getElementById("result-d8").innerHTML = d8;
-      }
-
-      function gerard10(){
-        var d10 = Math.floor(Math.random() * 10) + 1;
-        document.getElementById("result-d10").innerHTML = d10;
-      }
-
-      function gerard12(){
-        var d12 = Math.floor(Math.random() * 12) + 1;
-        document.getElementById("result-d12").innerHTML = d12;
-      }
-
-      function gerard20(){
-        var d20 = Math.floor(Math.random() * 20) + 1;
-        document.getElementById("result-d20").innerHTML = d20;
-      }
-
-    </script>
-
-    <!-- JavaScript da foto de perfil-->
+    <!--Adicionar foto de perfil-->
     <script>
         const inputFile = document.getElementById("add-foto");
-const preview = document.getElementById("foto");
-const saveButton = document.getElementById("foto");
-
-inputFile.addEventListener("change", function() {
-  const file = inputFile.files[0];
-
-  if (file.type.startsWith("image/")) {
-    const reader = new FileReader();
-
-    reader.addEventListener("load", function() {
-      preview.src = reader.result;
-    });
-
-    reader.readAsDataURL(file);
-  } else {
-    alert("Por favor, selecione uma imagem válida");
-    inputFile.value = ""; 
-  }
-});
-
-saveButton.addEventListener("click", function() {
-});
+        const preview = document.getElementById("foto");
+        const saveButton = document.getElementById("foto");
+        
+        inputFile.addEventListener("change", function() {
+            const file = inputFile.files[0];
+            
+            if (file.type.startsWith("image/")) {
+                const reader = new FileReader();
+                
+                reader.addEventListener("load", function() {
+                    preview.src = reader.result;
+                });
+                
+                reader.readAsDataURL(file);
+            } else {
+                alert("Por favor, selecione uma imagem válida");
+                inputFile.value = "";
+             }});
+             
+             saveButtonaddEventListener("click", function() {});
     </script>
-    
-    <!-- HTML da barra de status-->
-    <div class="container-barra">
-      <div class="manter-barra">
-        <div class="barra-status"></div>
-      </div>
 
-      <div class="container-add-sub">
-        <button id="sub">-</button>
-        <button id="add">+</button>
-      </div>
-    </div>
-
+    <!--Adicionar informações sobre o personagem-->
     <script>
-      const healthBar = document.querySelector('.barra-status');
-        const increaseBtn = document.querySelector('#add');
-        const decreaseBtn = document.querySelector('#sub');
-        let health = 100;
-        let maxHealth = 100;
 
-        function updateHealthBar() {
-          var healthRatio = health / maxHealth;
-          var healthBarWidth = healthRatio * 100;
-          healthBar.style.width = `${healthBarWidth}%`;
+        function nome() {
+            var nome = window.prompt ('Digite o nome do seu personagem:');
+            if (nome) {
+                var exibirNome = document.getElementById('exibirNome');
+                exibirNome.innerHTML = nome;
+            }
         }
 
-        increaseBtn.addEventListener('click', () => {
-          health += 10;
-          if (health > maxHealth) {
-            health = maxHealth;
-          }
-          updateHealthBar();
-        });
+        function jogador() {
+            var jogador = window.prompt ('Digite seu nome:');
+            if (jogador) {
+                var exibirJogador = document.getElementById('Ijogador');
+                exibirJogador.innerHTML = jogador;
+            }
+        }
 
-        decreaseBtn.addEventListener('click', () => {
-          health -= 10;
-          if (health < 0) {
-            health = 0;
-          }
-          updateHealthBar();
-        });
-updateHealthBar();
+        function idade(){
+            var idade = window.prompt ('Digite seu idade:');
+            if (idade) {
+                var exibirIdade = document.getElementById('Iidade');
+                exibirIdade.innerHTML = idade;
+            }
+        }
+
+        function altura(){
+            var altura = window.prompt ('Qual altura do seu personagem?:');
+            if (altura) {
+                var exibirAltura = document.getElementById('Ialtura');
+                exibirAltura.innerHTML = altura;
+            }
+        }
+
+        function olhos(){
+            var olhos = window.prompt ('Qual a cor dos olhos do seu personagem?:');
+            if (olhos) {
+                var exibirOlhos = document.getElementById('Iolhos');
+                exibirOlhos.innerHTML = olhos;
+            }
+        }
+
+        function cabelo(){
+            var cabelo = window.prompt ('Qual a cor do cabelo do seu personagem?:');
+            if (cabelo) {
+                var exibirCabelo = document.getElementById('Icabelo');
+                exibirCabelo.innerHTML = cabelo;
+            }
+        }
+
+        function pele(){
+            var pele = window.prompt ('Qual a cor da pele do seu personagem?:');
+            if (pele) {
+                var exibirPele = document.getElementById('Ipele');
+                exibirPele.innerHTML = pele;
+            }
+        }
+
+        function sexo(){
+            var sexo = window.prompt ('Qual o sexo do seu personagem?:');
+            if (sexo) {
+                var exibirSexo = document.getElementById('Isexo');
+                exibirSexo.innerHTML = sexo;
+            }
+        }
+
+        function personalidade(){
+            var personalidade = window.prompt ('Como é a personalidade do seu personagem?:');
+            if (personalidade) {
+                var exibirPerso = document.getElementById('Ipersonalidade');
+                exibirPerso.innerHTML = personalidade;
+            }
+        }
+
+        function profissão(){
+            var profissão = window.prompt ('Qual a profissão do seu personagem?:');
+            if (profissão) {
+                var exibirProf = document.getElementById('Iprofissão');
+                exibirProf.innerHTML = profissão;
+            }
+        }
+
+        function classe(){
+            var classe = window.prompt ('Combatente, especialista ou ocultista?:');
+            if (classe) {
+                var exibirClasse = document.getElementById('Iclasse');
+                exibirClasse.innerHTML = classe;
+            }
+        }
     </script>
 
+    <!--Abrir o menu dos dados do personagem e dados-->
+    <script>
+        function abrirMenu() {
+         if (perfil.style.display == 'block') {
+            perfil.style.display = 'none'
+         } else {
+            perfil.style.display = 'block'
+         }
+        }
+
+        function telaDados() {
+            if (dadosTela.style.display == 'block') {
+                dadosTela.style.display = 'none'
+            } else {dadosTela.style.display = 'block'
+            dadosRolagem.style.display = 'none'
+        }
+        }
+    </script>   
 </body>
 </html>
