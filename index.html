@@ -131,6 +131,59 @@
     
     // Chama a função de salvar os dados ao sair da página
     window.onbeforeunload = salvarDados;
+
+     // Função para salvar os dados no localStorage
+     function salvarDados() {
+        // Obtém os valores dos campos
+        var jogador = document.getElementById("ijogador").value;
+        var foto = document.getElementById("foto").src;
+
+        // Cria um objeto com os dados
+        var dados = {
+            jogador: jogador,
+            foto: foto
+        };
+
+        // Converte o objeto em uma string JSON
+        var dadosString = JSON.stringify(dados);
+
+        // Salva a string JSON no localStorage
+        localStorage.setItem("dados", dadosString);
+    }
+
+    // Função para carregar os dados do localStorage
+    function carregarDados() {
+        // Obtém a string JSON do localStorage
+        var dadosString = localStorage.getItem("dados");
+
+        // Verifica se há dados salvos
+        if (dadosString) {
+            // Converte a string JSON de volta para objeto
+            var dados = JSON.parse(dadosString);
+
+            // Preenche os campos com os dados salvos
+            document.getElementById("ijogador").value = dados.jogador;
+            document.getElementById("foto").src = dados.foto;
+        }
+    }
+
+    // Função para atualizar a imagem do personagem
+    function atualizarImagem(event) {
+        var input = event.target;
+        var reader = new FileReader();
+        reader.onload = function() {
+            var dataURL = reader.result;
+            document.getElementById("foto").src = dataURL;
+            salvarDados(); // Salva os dados ao atualizar a imagem
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+
+    // Chama a função de carregar os dados ao carregar a página
+    window.onload = carregarDados;
+    
+    // Chama a função de salvar os dados ao sair da página
+    window.onbeforeunload = salvarDados;
     </script>
 </body>
 </html>
