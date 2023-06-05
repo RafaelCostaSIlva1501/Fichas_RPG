@@ -140,7 +140,7 @@ html{
     display: flex;
     flex-direction: column;
     border: 1px solid white;
-    width: 90vw;
+    width: 98vw;
     height: max-content;
 }
 
