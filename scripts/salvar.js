@@ -2,6 +2,7 @@
 function salvarDados() {
     var dados = {
       foto: document.getElementById("foto").getAttribute("src"),
+      personalidade: document.getElementById("ipersonalidade").value,
       personagem: document.getElementById("ipersonagem").value,
       jogador: document.getElementById("ijogador").value,
       altura: document.getElementById("ialtura").value,
@@ -11,18 +12,20 @@ function salvarDados() {
       sexo: document.getElementById("isexo").value,
       idade: document.getElementById("iidade").value,
       classe: document.getElementById("iclasse").value,
-      profissao: document.getElementById("iprofissão").value
+      profissao: document.getElementById("iprofissão").value,
+      alturaTextarea: document.getElementById("ipersonalidade").style.height
     };
   
     localStorage.setItem("dadosPagina", JSON.stringify(dados));
   }
   
-  // Função para carregar os dados do localStorage
+// Função para carregar os dados do localStorage
   function carregarDados() {
     var dados = localStorage.getItem("dadosPagina");
     if (dados) {
       dados = JSON.parse(dados);
       document.getElementById("foto").setAttribute("src", dados.foto);
+      document.getElementById("ipersonalidade").value = dados.personalidade;
       document.getElementById("ipersonagem").value = dados.personagem;
       document.getElementById("ijogador").value = dados.jogador;
       document.getElementById("ialtura").value = dados.altura;
@@ -33,6 +36,7 @@ function salvarDados() {
       document.getElementById("iidade").value = dados.idade;
       document.getElementById("iclasse").value = dados.classe;
       document.getElementById("iprofissão").value = dados.profissao;
+      document.getElementById("ipersonalidade").style.height = dados.alturaTextarea;
     }
   }
   
@@ -41,6 +45,7 @@ function salvarDados() {
   
   // Vincular as funções aos eventos corretos nos elementos HTML
   document.getElementById("foto").addEventListener("change", salvarDados);
+  document.getElementById("ipersonalidade").addEventListener("input",salvarDados);
   document.getElementById("ipersonagem").addEventListener("input", salvarDados);
   document.getElementById("ijogador").addEventListener("input", salvarDados);
   document.getElementById("ialtura").addEventListener("input", salvarDados);
@@ -94,4 +99,5 @@ function converterImagemParaBase64(arquivo) {
   
   // Vincular a função salvarImagem() ao evento de alteração do input de imagem
   document.getElementById("addFoto").addEventListener("change", salvarImagem);
+  
   
