@@ -4,11 +4,14 @@ function atualizarTamanho(input) {
   }
 
 //Atualiza o height da área de personalidade
-  function ajustarAltura(textarea) {
-    textarea.style.height = textarea.scrollHeight + "px";
-  }
+function ajustarTamanhoTextarea() {
+  const textarea = document.getElementById("ipersonalidade");
+  textarea.style.height = "auto"; // Redefinir o height para calcular o tamanho correto
+  textarea.style.height = `${textarea.scrollHeight}px`; // Definir o height com base no scrollHeight
+}
+  
 
-//Abre e fecha o meu de informações  
+//Abre e fecha o menu de informações  
   function abrirmenuinfo() {
     if (menuInfo.style.display == 'block') {
         menuInfo.style.display = 'none'
