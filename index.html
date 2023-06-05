@@ -27,6 +27,7 @@
         <label for="ipersonagem"><input type="text" id="ipersonagem" oninput="atualizarTamanho(this)" placeholder="Personagem"></label>
     </div>    
 
+    <!--Menu de informações-->
     <div class="container-menu-info">
 
         <abbr title="Abrir Menu de informações"><button id="btnMenuInfo" onclick="abrirmenuinfo()"></button></abbr>
@@ -39,9 +40,9 @@
 
             <hr>
 
-            <div class="container-fisico-personalidade">
+            <div class="container-fisico-info">
                 <div class="fisico">
-                    <label for="ialtura">Altura:<input type="text" id="ialtura"></label> <br>
+                    <label for="ialtura">Altura:<input type="text" id="ialtura" ></label> <br>
 
                     <label for="icabelo">Cabelo:<input type="text" id="icabelo"></label> <br>
 
@@ -52,7 +53,7 @@
                     <label for="isexo">Sexo:<input type="text" id="isexo"></label> <br>
                 </div>
                 
-                <div class="personalidade">
+                <div class="info">
                     <label for="iidade">Idade:<input type="text" id="iidade"></label> <br>
 
                     <label for="iclasse">Classe:<input type="text" id="iclasse"></label> <br>
@@ -60,6 +61,14 @@
                     <label for="iprofissão">Profissão:<input type="text" id="iprofissão"></label> <br>
 
                 </div>
+            </div>
+
+            <hr>
+
+            <div class="container-personalidade">
+                
+                <label for="">Personalidade:</label>
+                <textarea  id="ipersonalidade" ></textarea>
             </div>
 
         </div>
