@@ -88,7 +88,7 @@ html{
 #foto:hover{
     cursor: pointer;
     box-shadow: 0px 0px 10px 5px #ffffff3f;
-    transition: box-shadow 1s;
+    transition: box-shadow 0.3s;
 }
 
 /*Nome do personagem*/
@@ -145,8 +145,8 @@ html{
 }
 
 #menuInfo label{
-    font-size: 16px;
-    line-height: 2em;
+    font-size: 18px;
+    line-height: 25px;
 }
 
 #menuInfo input{
