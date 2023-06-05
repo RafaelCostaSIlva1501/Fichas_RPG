@@ -51,3 +51,47 @@ function salvarDados() {
   document.getElementById("iidade").addEventListener("input", salvarDados);
   document.getElementById("iclasse").addEventListener("input", salvarDados);
   document.getElementById("iprofissão").addEventListener("input", salvarDados);
+
+  // Função para converter uma imagem em base64
+function converterImagemParaBase64(arquivo) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(arquivo);
+    });
+  }
+  
+  // Função para salvar a imagem em base64 no localStorage
+  function salvarImagem() {
+    const inputImagem = document.getElementById("addFoto");
+    const arquivo = inputImagem.files[0];
+  
+    if (arquivo) {
+      converterImagemParaBase64(arquivo)
+        .then(base64 => {
+          localStorage.setItem("imagem", base64);
+          console.log("Imagem salva com sucesso!");
+        })
+        .catch(error => {
+          console.error("Erro ao converter a imagem:", error);
+        });
+    }
+  }
+  
+  // Função para carregar a imagem do localStorage
+  function carregarImagem() {
+    const imagemBase64 = localStorage.getItem("imagem");
+  
+    if (imagemBase64) {
+      const imagem = document.getElementById("foto");
+      imagem.src = imagemBase64;
+    }
+  }
+  
+  // Chamar a função para carregar a imagem quando a página for carregada
+  document.addEventListener("DOMContentLoaded", carregarImagem);
+  
+  // Vincular a função salvarImagem() ao evento de alteração do input de imagem
+  document.getElementById("addFoto").addEventListener("change", salvarImagem);
+  
