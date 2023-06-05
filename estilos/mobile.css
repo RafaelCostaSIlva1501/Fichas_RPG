@@ -163,7 +163,6 @@ html{
     margin-left: 2px;
     font-size: 14px;
     background-color: #000000;
-    border: 1px solid blueviolet;
 }
 
 .jogador{
@@ -187,7 +186,6 @@ html{
     font-size: 16px;
     width: 100%;
     overflow: hidden;
-    border: 1px solid rgb(255, 44, 79);
 }
 
 /**/
