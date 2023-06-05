@@ -68,5 +68,69 @@
     <script src="scripts/menuDado.js"></script>
     <script src="scripts/fotoPerfil.js"></script>
     <script src="scripts/infos.js"></script>
+
+    <script>
+         // Função para salvar os dados no localStorage
+    function salvarDados() {
+        // Obtém os valores dos campos
+        var jogador = document.getElementById("ijogador").value;
+        var altura = document.getElementById("ialtura").value;
+        var cabelo = document.getElementById("icabelo").value;
+        var olhos = document.getElementById("iolhos").value;
+        var pele = document.getElementById("ipele").value;
+        var sexo = document.getElementById("isexo").value;
+        var idade = document.getElementById("iidade").value;
+        var classe = document.getElementById("iclasse").value;
+        var profissao = document.getElementById("iprofissão").value;
+
+        // Cria um objeto com os dados
+        var dados = {
+            jogador: jogador,
+            altura: altura,
+            cabelo: cabelo,
+            olhos: olhos,
+            pele: pele,
+            sexo: sexo,
+            idade: idade,
+            classe: classe,
+            profissao: profissao
+        };
+
+        // Converte o objeto em uma string JSON
+        var dadosString = JSON.stringify(dados);
+
+        // Salva a string JSON no localStorage
+        localStorage.setItem("dados", dadosString);
+    }
+
+    // Função para carregar os dados do localStorage
+    function carregarDados() {
+        // Obtém a string JSON do localStorage
+        var dadosString = localStorage.getItem("dados");
+
+        // Verifica se há dados salvos
+        if (dadosString) {
+            // Converte a string JSON de volta para objeto
+            var dados = JSON.parse(dadosString);
+
+            // Preenche os campos com os dados salvos
+            document.getElementById("ijogador").value = dados.jogador;
+            document.getElementById("ialtura").value = dados.altura;
+            document.getElementById("icabelo").value = dados.cabelo;
+            document.getElementById("iolhos").value = dados.olhos;
+            document.getElementById("ipele").value = dados.pele;
+            document.getElementById("isexo").value = dados.sexo;
+            document.getElementById("iidade").value = dados.idade;
+            document.getElementById("iclasse").value = dados.classe;
+            document.getElementById("iprofissão").value = dados.profissao;
+        }
+    }
+
+    // Chama a função de carregar os dados ao carregar a página
+    window.onload = carregarDados;
+    
+    // Chama a função de salvar os dados ao sair da página
+    window.onbeforeunload = salvarDados;
+    </script>
 </body>
 </html>
