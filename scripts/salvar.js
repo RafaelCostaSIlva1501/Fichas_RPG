@@ -1,7 +1,7 @@
 // Função para salvar os dados no localStorage
 function salvarDados() {
     var dados = {
-      foto: document.getElementById("foto").src,
+      foto: document.getElementById("foto").getAttribute("src"),
       personagem: document.getElementById("ipersonagem").value,
       jogador: document.getElementById("ijogador").value,
       altura: document.getElementById("ialtura").value,
@@ -22,7 +22,7 @@ function salvarDados() {
     var dados = localStorage.getItem("dadosPagina");
     if (dados) {
       dados = JSON.parse(dados);
-      document.getElementById("foto").src = dados.foto;
+      document.getElementById("foto").setAttribute("src", dados.foto);
       document.getElementById("ipersonagem").value = dados.personagem;
       document.getElementById("ijogador").value = dados.jogador;
       document.getElementById("ialtura").value = dados.altura;
@@ -36,6 +36,18 @@ function salvarDados() {
     }
   }
   
-  // Chamada da função para carregar os dados quando a página for carregada
-  carregarDados();
+  // Chamar a função para carregar os dados quando a página for carregada
+  document.addEventListener("DOMContentLoaded", carregarDados);
   
+  // Vincular as funções aos eventos corretos nos elementos HTML
+  document.getElementById("foto").addEventListener("change", salvarDados);
+  document.getElementById("ipersonagem").addEventListener("input", salvarDados);
+  document.getElementById("ijogador").addEventListener("input", salvarDados);
+  document.getElementById("ialtura").addEventListener("input", salvarDados);
+  document.getElementById("icabelo").addEventListener("input", salvarDados);
+  document.getElementById("iolhos").addEventListener("input", salvarDados);
+  document.getElementById("ipele").addEventListener("input", salvarDados);
+  document.getElementById("isexo").addEventListener("input", salvarDados);
+  document.getElementById("iidade").addEventListener("input", salvarDados);
+  document.getElementById("iclasse").addEventListener("input", salvarDados);
+  document.getElementById("iprofissão").addEventListener("input", salvarDados);
