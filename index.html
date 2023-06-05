@@ -5,281 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fichas</title>
-    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="estilos/mobile.css">
 </head>
 <body>
 
-    <img src="imagens/D20_icon.png" alt="" id="dadosRolagem" onclick="telaDados()">
-    <div id="dadosTela">
-        <img src="imagens/D20_icon.png" alt="" id="dadosRolagem" onclick="telaDados()">
+    <!--Menu dos dados-->
+    <div>
+        <img src="imagens/D20_icon.png" alt="Dado" id="btnDadoFora" onclick="abrirTelaDados()">
+        <div id="telaDado">
+            <img src="imagens/D20_icon.png" alt="Dado" id="btnDadoDentro" onclick="fecharTelaDados()">
+        </div>
     </div>
 
-    <!--Foto de Perfil-->
-    <div class="container-perfil">
+    <!--Foto do personagem-->
+    <div class="container-foto-perfil">
+        <label for="addFoto" class="add-foto"><img id="foto"><input type="file" id="addFoto"></label>
+    </div>
 
-        <!--Adicionar foto de perfil-->
-        <div class="container-foto-txt">
-            <span class="add-foto"><img id="foto"><input type="file" id="add-foto"></span>
-            <p id="exibirNome" onclick="nome()" contenteditable="true">Nome do seu personagem</p>
-        </div>
+    <!--Nome do personagem-->
+    <div class="container-nome-persona">
+        <input type="text" id="nomeJog" oninput="atualizarTamanho(this)" placeholder="Personagem">
+    </div>    
 
-        <!--Botão para abrir o menu de dados do personagem-->
-        <div class="perfil-btn-dado" onclick="abrirMenu()"></div>
+    <div class="container-menu-info">
 
-        <!--Dados do personagem-->
-        <div class="perfil-dado" id="perfil">
-            <div class="nome-jog">
-                <span id="jogador" onclick="jogador()" contenteditable="true">Jogador:<span id="Ijogador"></span></span>
+        <abbr title="Abrir Menu de informações"><button id="btnMenuInfo" onclick="abrirmenuinfo()"></button></abbr>
+
+        <div id="menuInfo">
+
+            <div class="jogador"> 
+                <label for="">Jogador:<input type="text" id=""></label>
             </div>
 
             <hr>
 
-            <div class="fisico-informações">
+            <div class="container-fisico-personalidade">
                 <div class="fisico">
-                    <h4>Características físicas</h4>
-                    <span id="altura" onclick="altura()" contenteditable="true">Altura:<span id="Ialtura"></span></span> <br>
+                    <label for="">Altura:<input type="text"></label> <br>
 
-                    <span id="cabelo" onclick="cabelo()" contenteditable="true">Cabelo:<span id="Icabelo"></span></span> <br>
+                    <label for="">Cabelo:<input type="text"></label> <br>
 
-                    <span id="olhos" onclick="olhos()" contenteditable="true">Olhos:<span id="Iolhos"></span></span> <br>
+                    <label for="">Olhos:<input type="text"></label> <br>
 
-                    <span id="pele" onclick="pele()" contenteditable="true">Pele:<span id="Ipele"></span></span> <br>
+                    <label for="">Pele:<input type="text"></label> <br>
 
-                    <span id="sexo" onclick="sexo()" contenteditable="true">Sexo:<span id="Isexo"></span></span> <br>
+                    <label for="">Sexo:<input type="text"></label> <br>
                 </div>
+                
+                <div class="personalidade">
+                    <label for="">Idade:<input type="text"></label> <br>
 
-                <div class="informações">
-                    <h4>Informações</h4>
-                    <span id="profissão" onclick="profissão()" contenteditable="true">Profissão:<span id="Iprofissão"></span></span> <br>
+                    <label for="">Classe:<input type="text"></label> <br>
 
-                    <span id="classe" onclick="classe()" contenteditable="true">Classe:<span id="Iclasse"></span></span> <br>
+                    <label for="">Profissão:<input type="text"></label> <br>
 
-                    <span id="idade" onclick="idade()" contenteditable="true">Idade:<span id="Iidade"></span></span> 
                 </div>
-               
             </div>
 
-            <hr>
-
-            <div class="perso">
-                <span for="Ipersonalidade" id="personalidade" onclick="personalidade()" contenteditable="true">Personalidade: <br> <span id="Ipersonalidade"></span></span> 
-            </div>
-
-            <hr>
-
-            <div class="hist">
-                <span id="historia" onclick="historia()" contenteditable="true">História: <br> <span id="Ihistoria"></span></span> 
-            </div>
-            
         </div>
     </div>
 
-    <!--Adicionar foto de perfil-->
-    <script>
-        const inputFile = document.getElementById("add-foto");
-        const preview = document.getElementById("foto");
-        const saveButton = document.getElementById("foto");
-        
-        inputFile.addEventListener("change", function() {
-            const file = inputFile.files[0];
-            
-            if (file.type.startsWith("image/")) {
-                const reader = new FileReader();
-                
-                reader.addEventListener("load", function() {
-                    preview.src = reader.result;
-                });
-                
-                reader.readAsDataURL(file);
-            } else {
-                alert("Por favor, selecione uma imagem válida");
-                inputFile.value = "";
-             }});
-             
-             saveButton.addEventListener("click", function() {});
-    </script>
-
-    <!--Adicionar informações sobre o personagem-->
-    <script>
-
-        function nome() {
-            var nome = window.prompt ('Digite o nome do seu personagem:');
-            if (nome) {
-                var exibirNome = document.getElementById('exibirNome');
-                exibirNome.innerHTML = nome;
-            }
-        }
-
-        function jogador() {
-            var jogador = window.prompt ('Digite seu nome:');
-            if (jogador) {
-                var exibirJogador = document.getElementById('Ijogador');
-                exibirJogador.innerHTML = jogador;
-            }
-        }
-
-        function idade(){
-            var idade = window.prompt ('Digite seu idade:');
-            if (idade) {
-                var exibirIdade = document.getElementById('Iidade');
-                exibirIdade.innerHTML = idade;
-            }
-        }
-
-        function altura(){
-            var altura = window.prompt ('Qual altura do seu personagem?:');
-            if (altura) {
-                var exibirAltura = document.getElementById('Ialtura');
-                exibirAltura.innerHTML = altura;
-            }
-        }
-
-        function olhos(){
-            var olhos = window.prompt ('Qual a cor dos olhos do seu personagem?:');
-            if (olhos) {
-                var exibirOlhos = document.getElementById('Iolhos');
-                exibirOlhos.innerHTML = olhos;
-            }
-        }
-
-        function cabelo(){
-            var cabelo = window.prompt ('Qual a cor do cabelo do seu personagem?:');
-            if (cabelo) {
-                var exibirCabelo = document.getElementById('Icabelo');
-                exibirCabelo.innerHTML = cabelo;
-            }
-        }
-
-        function pele(){
-            var pele = window.prompt ('Qual a cor da pele do seu personagem?:');
-            if (pele) {
-                var exibirPele = document.getElementById('Ipele');
-                exibirPele.innerHTML = pele;
-            }
-        }
-
-        function sexo(){
-            var sexo = window.prompt ('Qual o sexo do seu personagem?:');
-            if (sexo) {
-                var exibirSexo = document.getElementById('Isexo');
-                exibirSexo.innerHTML = sexo;
-            }
-        }
-
-        function personalidade(){
-            var personalidade = window.prompt ('Como é a personalidade do seu personagem?:');
-            if (personalidade) {
-                var exibirPerso = document.getElementById('Ipersonalidade');
-                exibirPerso.innerHTML = personalidade;
-            }
-        }
-
-        function profissão(){
-            var profissão = window.prompt ('Qual a profissão do seu personagem?:');
-            if (profissão) {
-                var exibirProf = document.getElementById('Iprofissão');
-                exibirProf.innerHTML = profissão;
-            }
-        }
-
-        function classe(){
-            var classe = window.prompt ('Combatente, especialista ou ocultista?:');
-            if (classe) {
-                var exibirClasse = document.getElementById('Iclasse');
-                exibirClasse.innerHTML = classe;
-            }
-        }
-    </script>
-
-    <!--Abrir o menu dos dados do personagem e dados-->
-    <script>
-        function abrirMenu() {
-         if (perfil.style.display == 'block') {
-            perfil.style.display = 'none'
-         } else {
-            perfil.style.display = 'block'
-         }
-        }
-
-        function telaDados() {
-            if (dadosTela.style.display == 'block') {
-                dadosTela.style.display = 'none'
-            } else {dadosTela.style.display = 'block'
-            dadosRolagem.style.display = 'none'
-        }
-        }
-    </script>   
-
-    <!--SALVAR DADOS-->
-    <script>
-        function salvarDados() {
-        var nome = document.getElementById('exibirNome').innerHTML;
-        var jogador = document.getElementById('Ijogador').innerHTML;
-        var idade = document.getElementById('Iidade').innerHTML;
-        var altura = document.getElementById('Ialtura').innerHTML;
-        var olhos = document.getElementById('Iolhos').innerHTML;
-        var cabelo = document.getElementById('Icabelo').innerHTML;
-        var pele = document.getElementById('Ipele').innerHTML;
-        var sexo = document.getElementById('Isexo').innerHTML;
-        var personalidade = document.getElementById('Ipersonalidade').innerHTML;
-        var profissao = document.getElementById('Iprofissão').innerHTML;
-        var classe = document.getElementById('Iclasse').innerHTML;
-
-        localStorage.setItem('nome', nome);
-        localStorage.setItem('jogador', jogador);
-        localStorage.setItem('idade', idade);
-        localStorage.setItem('altura', altura);
-        localStorage.setItem('olhos', olhos);
-        localStorage.setItem('cabelo', cabelo);
-        localStorage.setItem('pele', pele);
-        localStorage.setItem('sexo', sexo);
-        localStorage.setItem('personalidade', personalidade);
-        localStorage.setItem('profissao', profissao);
-        localStorage.setItem('classe', classe);
-    }
-
-    function carregarDados() {
-        var nome = localStorage.getItem('nome');
-        var jogador = localStorage.getItem('jogador');
-        var idade = localStorage.getItem('idade');
-        var altura = localStorage.getItem('altura');
-        var olhos = localStorage.getItem('olhos');
-        var cabelo = localStorage.getItem('cabelo');
-        var pele = localStorage.getItem('pele');
-        var sexo = localStorage.getItem('sexo');
-        var personalidade = localStorage.getItem('personalidade');
-        var profissao = localStorage.getItem('profissao');
-        var classe = localStorage.getItem('classe');
-
-        document.getElementById('exibirNome').innerHTML = nome;
-        document.getElementById('Ijogador').innerHTML = jogador;
-        document.getElementById('Iidade').innerHTML = idade;
-        document.getElementById('Ialtura').innerHTML = altura;
-        document.getElementById('Iolhos').innerHTML = olhos;
-        document.getElementById('Icabelo').innerHTML = cabelo;
-        document.getElementById('Ipele').innerHTML = pele;
-        document.getElementById('Isexo').innerHTML = sexo;
-        document.getElementById('Ipersonalidade').innerHTML = personalidade;
-        document.getElementById('Iprofissão').innerHTML = profissao;
-        document.getElementById('Iclasse').innerHTML = classe;
-    }
-
-    window.onload = function() {
-        carregarDados();
-    };
-
-    document.getElementById('exibirNome').addEventListener('input', salvarDados);
-    document.getElementById('Ijogador').addEventListener('input', salvarDados);
-    document.getElementById('Iidade').addEventListener('input', salvarDados);
-    document.getElementById('Ialtura').addEventListener('input', salvarDados);
-    document.getElementById('Iolhos').addEventListener('input', salvarDados);
-    document.getElementById('Icabelo').addEventListener('input', salvarDados);
-    document.getElementById('Ipele').addEventListener('input', salvarDados);
-    document.getElementById('Isexo').addEventListener('input', salvarDados);
-    document.getElementById('Ipersonalidade').addEventListener('input', salvarDados);
-    document.getElementById('Iprofissão').addEventListener('input', salvarDados);
-    document.getElementById('Iclasse').addEventListener('input', salvarDados);
-    </script>
-
+    <script src="scripts/menuDado.js"></script>
+    <script src="scripts/fotoPerfil.js"></script>
+    <script src="scripts/infos.js"></script>
 </body>
 </html>

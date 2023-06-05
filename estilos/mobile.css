@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+/*Configurações gerais e resets*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+input{
+    border: none;
+    outline: none;
+    background-color: none;
+}
+button{
+    border: none;
+    background-color: none;
+    outline: none;
+}
+
+abbr{
+    text-decoration: none;
+}
+
+html{
+    background-color: black;
+}
+
+/*Menu dos dados*/
+#btnDadoFora{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#telaDado{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 95vw;
+    height: 95vh;
+    border: 1px solid white;
+    background-color: #000000ee;
+}
+
+#btnDadoDentro{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+/*Foto de perfil*/
+.container-foto-perfil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.add-foto{
+    border: 1px solid blue;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+#addFoto{
+    display: none;
+}
+
+#foto{
+    border: 3px solid white;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+#foto:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 5px #ffffff3f;
+    transition: box-shadow 1s;
+}
+
+/*Nome do personagem*/
+.container-nome-persona{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+#nomeJog{
+    min-width: 30%;
+    padding: 2px;
+    height: 30px;
+    background-color: rgb(0, 0, 0);
+    border-bottom: 1px solid #ffffff67;
+    font-size: 22px;
+    text-align: center;
+    resize: none;
+}
+
+/*Botão menu de informações*/
+.container-menu-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+#btnMenuInfo{
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: 2px solid #474747;
+    background-color: #000000;
+}
+
+#btnMenuInfo:hover{
+    cursor: pointer;
+    background-color: #ffffff;
+    transform: scale(1.1);
+    transition: transform 1s;
+    box-shadow: 0px 0px 5px 1px #ffffff3f;
+}
+
+#menuInfo{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    width: 90vw;
+    height: max-content;
+}
+
+#menuInfo label{
+    font-size: 20px;
+    line-height: 2em;
+}
+
+#menuInfo input{
+    width: 120px;
+    margin-left: 5px;
+    font-size: 16px;
+    background-color: #000000;
+}
+
+/*Menu de informações*/
+.jogador{
+    display: flex;
+    margin-left: 5px;
+}
+
+.container-fisico-personalidade{
+    display: flex;
+    justify-content: space-around;
+}
+
+
