@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fichas</title>
+    <link rel="shortcut icon" href="imagens/D20_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="estilos/mobile.css">
 </head>
 <body>
 
     <!--Menu dos dados-->
     <div>
-        <img src="imagens/D20_icon.png" alt="Dado" id="btnDadoFora" onclick="abrirTelaDados()">
+        <img src="imagens/D6_icon.png" alt="Dado" id="btnDadoFora" onclick="abrirTelaDados()">
         <div id="telaDado">
             <img src="imagens/D20_icon.png" alt="Dado" id="btnDadoDentro" onclick="fecharTelaDados()">
         </div>
@@ -32,7 +33,7 @@
 
         <abbr title="Abrir Menu de informações"><button id="btnMenuInfo" onclick="abrirmenuinfo()"></button></abbr>
 
-        <div id="menuInfo">
+        <form id="menuInfo">
 
             <div class="jogador"> 
                 <label for="ijogador">Jogador:<input type="text" id="ijogador"></label>
@@ -71,7 +72,9 @@
                 <textarea  id="ipersonalidade" oninput="ajustarTamanhoTextarea()"></textarea>
             </div>
 
-        </div>
+            <input type="reset" value="DELETAR">
+
+        </form>
     </div>
 
     <script src="scripts/menuDado.js"></script>
