@@ -4,10 +4,11 @@ function atualizarTamanho(input) {
   }
 
 //Atualiza o height da área de personalidade
-function ajustarTamanhoTextarea() {
-  const textarea = document.getElementById("ipersonalidade");
-  textarea.style.height = "auto"; // Redefinir o height para calcular o tamanho correto
-  textarea.style.height = `${textarea.scrollHeight}px`; // Definir o height com base no scrollHeight
+function ajustarTamanhoTextarea(textarea) {
+  // Redefinir o height para calcular o tamanho correto
+  textarea.style.height = "auto"; 
+  // Definir o height com base no scrollHeight
+  textarea.style.height = `${textarea.scrollHeight}px`;
 }
   
 
