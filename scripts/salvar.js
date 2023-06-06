@@ -2,6 +2,7 @@
 function salvarDados() {
     var dados = {
       foto: document.getElementById("foto").getAttribute("src"),
+      historia: document.getElementById("ihistoria").value,
       personalidade: document.getElementById("ipersonalidade").value,
       personagem: document.getElementById("ipersonagem").value,
       jogador: document.getElementById("ijogador").value,
@@ -25,6 +26,7 @@ function salvarDados() {
     if (dados) {
       dados = JSON.parse(dados);
       document.getElementById("foto").setAttribute("src", dados.foto);
+      document.getElementById("ihistoria").value = dados.historia;
       document.getElementById("ipersonalidade").value = dados.personalidade;
       document.getElementById("ipersonagem").value = dados.personagem;
       document.getElementById("ijogador").value = dados.jogador;
@@ -45,6 +47,7 @@ function salvarDados() {
   
   // Vincular as funções aos eventos corretos nos elementos HTML
   document.getElementById("foto").addEventListener("change", salvarDados);
+  document.getElementById("ihistoria").addEventListener("input",salvarDados);
   document.getElementById("ipersonalidade").addEventListener("input",salvarDados);
   document.getElementById("ipersonagem").addEventListener("input", salvarDados);
   document.getElementById("ijogador").addEventListener("input", salvarDados);
