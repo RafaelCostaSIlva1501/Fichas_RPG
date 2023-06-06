@@ -12,3 +12,24 @@ function fecharTelaDados() {
         btnDadoFora.style.display = 'block'
     }
 }
+
+function fecharPer() {
+    var textarea = document.getElementById("ipersonalidade");
+    if (textarea.style.display === "none") {
+        textarea.style.display = "block";
+    } else {
+        textarea.style.display = "none";
+    }
+}
+
+function fecharHis() {
+    var textarea = document.getElementById("ihistoria");
+    if (textarea.style.display === "none") {
+        textarea.style.display = "block";
+    } else {
+        textarea.style.display = "none";
+    }
+}
+
+
+
