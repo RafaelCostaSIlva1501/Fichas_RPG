@@ -14,9 +14,9 @@ function ajustarTamanhoTextarea(textarea) {
 
 //Abre e fecha o menu de informações  
   function abrirmenuinfo() {
-    if (menuInfo.style.display == 'block') {
-        menuInfo.style.display = 'none'
-    } else {
+    if (menuInfo.style.display == 'none') {
         menuInfo.style.display = 'block'
+    } else {
+        menuInfo.style.display = 'none'
     }
   }
