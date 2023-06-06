@@ -131,7 +131,7 @@ html{
 
 #btnMenuInfo{
     width: 60px;
-    height: 20px;
+    height: 15px;
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 2px;
@@ -203,8 +203,10 @@ html{
 }
 
 .btnArea{
-    margin-top: 5px;
-    width: 50px;
+    position: absolute;
+    left: 5%;
+    margin-top: 9px;
+    width: 15px;
     height: 15px;
     border-radius: 2px;
     border: 1px solid #474747;
