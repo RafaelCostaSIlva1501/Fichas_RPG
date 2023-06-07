@@ -1,9 +1,11 @@
 // Função para atualizar a barra de vida com base nos valores atuais
 function atualizarBarraVida() {
     const barraVida = document.getElementById('barraProgressoVida');
+    const textoBarraVida = document.getElementById('numeroVida');
     barraVida.style.width = `${(vidaAtual / vidaTotal) * 100}%`;
-    barraVida.textContent = `${vidaAtual}/${vidaTotal}`;
+    textoBarraVida.textContent = `${vidaAtual}/${vidaTotal}`;
   }
+   
   
   // Função para definir a vida total
   function definirVidaTotal() {
