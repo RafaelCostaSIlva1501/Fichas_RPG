@@ -1,6 +1,6 @@
 //Atualiza o width da área do nome do personagem
 function atualizarTamanho(input) {
-    input.style.width = ((input.value.length + 1) * 11) + 'px';
+  input.style.width = ((input.value.length + 1) * 11) + 'px';
   }
 
 //Atualiza o height da área de personalidade
@@ -11,7 +11,6 @@ function ajustarTamanhoTextarea(textarea) {
   textarea.style.height = `${textarea.scrollHeight}px`;
 }
   
-
 //Abre e fecha o menu de informações  
   function abrirmenuinfo() {
     if (menuInfo.style.display == 'none') {
