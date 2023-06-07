@@ -17,10 +17,10 @@ function fecharTelaDados() {
 
 //Abre e fecha o menu de informações  
 function abrirmenuinfo() {
-    if (menuInfo.style.display == 'none') {
-        menuInfo.style.display = 'block'
+    if (menuInfo.style.display === 'none') {
+        menuInfo.style.display = 'block';
     } else {
-        menuInfo.style.display = 'none'
+        menuInfo.style.display = 'none';
     }
   }
 

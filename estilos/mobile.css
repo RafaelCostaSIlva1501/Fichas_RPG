@@ -148,7 +148,7 @@ html{
 
 /*Menu de informações*/
 #menuInfo{
-    display: none; /*Definir como flex depois*/
+    display: flex;
     flex-direction: column;
     border: 1px solid white;
     width: 95vw;
@@ -261,8 +261,7 @@ html{
     height: 100%;
 }
 
-#numeroVida{
-    display: block;
+.numero-vida{
     position: absolute;
     width: 170px;
     text-align: center;
@@ -274,19 +273,38 @@ html{
     justify-content: space-around;
 }
 
-.btn-add-sub{
+.sub{
     cursor: pointer;
-    background-color: #00000000;
     border: 1px solid white;
-    border-radius: 3px;
-    margin: 2px;
-    width: 40px;
-    height: 15px;
+    border-radius: 50%;
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../imagens/icone-menos-branco.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
-.btn-add-sub:active{
-    background-color: white;
-    background-image: none;
+.sub:active{
+    background-image: url(../imagens/icone-menos-preto.png);
+}
+
+.add{
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../imagens/icone-mais-branco.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.add:active{
+    background-image: url(../imagens/icone-mais-preto.png);
 }
 
 

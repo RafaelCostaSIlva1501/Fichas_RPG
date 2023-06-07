@@ -32,7 +32,7 @@
     <!--Menu de informações-->
     <div class="container-menu-info">
 
-        <abbr title="Abrir Menu de informações"><button id="btnMenuInfo" onclick="abrirmenuinfo()"></button></abbr>
+        <abbr title="Abrir Menu de informações"><button type="button" id="btnMenuInfo" onclick="abrirmenuinfo()"></button></abbr>
 
         <form id="menuInfo">
 
@@ -96,13 +96,13 @@
     
             <div class="container-barra">
                 <div class="barra-status" id="barraVida" onclick="definirVidaTotal()">
-                    <div class="barra-progresso" id="barraProgressoVida"><span id="numeroVida"></span></div>
+                    <div class="barra-progresso" id="barraProgressoVida"><span class="numero-vida" id="numeroVida"></span></div>
                 </div>
             </div>
     
             <div class="container-add-sub">
-                <button type="button" class="btn-add-sub" id="subVida" onclick="subtrairVida()"></button>
-                <button type="button" class="btn-add-sub" id="addVida" onclick="adicionarVida()"></button> 
+                <button type="button" id="subVida" class="sub" onclick="subtrairVida()"></button>
+                <button type="button" id="addVida" class="add" onclick="adicionarVida()"></button> 
             </div>
         </div>
     
@@ -111,7 +111,7 @@
     
             <div class="container-barra">
                 <div class="barra-status">
-                    <div class="barra-progresso" style="background-color: blue;">100/100</div>
+                    <div class="barra-progresso"><span class="numero-vida"></span></div>
                 </div>
             </div>
     
