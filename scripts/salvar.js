@@ -40,7 +40,7 @@ function salvarDados() {
       document.getElementById("iclasse").value = dados.classe;
       document.getElementById("iprofissão").value = dados.profissao;
       document.getElementById("ipersonalidade").style.height = dados.alturaTextarea;
-      document.getElementById("ihistoria").style.height = dados.alturaTextareaH
+      document.getElementById("ihistoria").style.height = dados.alturaTextareaH;
     }
   }
   
