@@ -7,6 +7,7 @@
     <title>Fichas</title>
     <link rel="shortcut icon" href="imagens/D20_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="estilos/mobile.css">
+    
 </head>
 <body>
 
@@ -91,64 +92,42 @@
     <div class="container-area-status">
 
         <div class="container-status">
-            <label for="" >Pontos de vida</label>
-
+            <p>Pontos de vida</p>
+    
             <div class="container-barra">
-
-                <div class="barra-status">
-                    <div class="barra-progresso">100/100</div>
+                <div class="barra-status" id="barraVida" onclick="definirVidaTotal()">
+                    <div class="barra-progresso" id="barraProgressoVida"></div>
                 </div>
-
-                <input type="txt" class="inserir-valor">
-
-                <button type="button" class="esconder-valor"></button>
             </div>
-
+    
             <div class="container-add-sub">
-                <div class="sub">
-                    <input type="text" class="inserir-valor">
-                    <button type="button" class="btn-add-sub"><span>-</span></button>
-                </div>
-
-                <div class="add">
-                    <input type="text" class="inserir-valor">
-                    <button type="button" class="btn-add-sub"><span>+</span></button>
-                </div>
+                <button type="button" class="btn-add-sub" id="subVida" onclick="subtrairVida()"></button>
+                <button type="button" class="btn-add-sub" id="addVida" onclick="adicionarVida()"></button> 
             </div>
         </div>
-
+    
         <div class="container-status">
-            <label for="" >Sanidade</label>
-
+            <p>Sanidade</p>
+    
             <div class="container-barra">
-
                 <div class="barra-status">
-                    <div class="barra-progresso" style="background-color: #1212ff;">100/100</div>
+                    <div class="barra-progresso" style="background-color: blue;">100/100</div>
                 </div>
-
-                <input type="txt" class="inserir-valor">
-
-                <button type="button" class="esconder-valor"></button>
             </div>
-
+    
             <div class="container-add-sub">
-                <div class="sub">
-                    <input type="text" class="inserir-valor">
-                    <button type="button" class="btn-add-sub"><span>-</span></button>
-                </div>
-
-                <div class="add">
-                    <input type="text" class="inserir-valor">
-                    <button type="button" class="btn-add-sub"><span>+</span></button>
-                </div>
+                <button type="button" class="btn-add-sub"></button>
+                <button type="button" class="btn-add-sub"></button>
             </div>
         </div>
-        
+    
     </div>
+    
 
     <script src="scripts/menuDado.js"></script>
     <script src="scripts/fotoPerfil.js"></script>
     <script src="scripts/infos.js"></script>
     <script src="scripts/salvar.js"></script>
+    <script src="scripts/status.js"></script>
 </body>
 </html>
