@@ -5,11 +5,12 @@ function atualizarBarraVida() {
     barraVida.style.width = `${(vidaAtual / vidaTotal) * 100}%`;
     textoBarraVida.textContent = `${vidaAtual}/${vidaTotal}`;
   }
+
    
   
   // Função para definir a vida total
   function definirVidaTotal() {
-    const valor = prompt('Digite o valor total de vida:');
+    const valor = prompt('Qual o valor total de vida que:');
     const valorNumerico = parseInt(valor);
     if (!isNaN(valorNumerico) && valorNumerico >= 0) {
       vidaTotal = valorNumerico;
@@ -44,12 +45,9 @@ function atualizarBarraVida() {
     }
   }
   
-  // Variáveis para armazenar a vida atual e total
-  let vidaAtual = 0;
-  let vidaTotal = 0;
-  
   // Atribui as chamadas de função aos eventos onclick dos elementos correspondentes
   
   document.getElementById('barraVida').onclick = definirVidaTotal;
   document.getElementById('subVida').onclick = subtrairVida;
   document.getElementById('addVida').onclick = adicionarVida;
+

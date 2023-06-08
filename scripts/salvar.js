@@ -15,7 +15,7 @@ function salvarDados() {
       classe: document.getElementById("iclasse").value,
       profissao: document.getElementById("iprofissão").value,
       alturaTextarea: document.getElementById("ipersonalidade").style.height,
-      alturaTextareaH: document.getElementById("ihistoria").style.height, 
+      alturaTextareaH: document.getElementById("ihistoria").style.height,
     };
   
     localStorage.setItem("dadosPagina", JSON.stringify(dados));
@@ -104,5 +104,9 @@ function converterImagemParaBase64(arquivo) {
   
   // Vincular a função salvarImagem() ao evento de alteração do input de imagem
   document.getElementById("addFoto").addEventListener("change", salvarImagem);
+
+  
+  
+
   
   
