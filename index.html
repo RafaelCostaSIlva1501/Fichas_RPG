@@ -15,7 +15,21 @@
     <div>
         <img src="imagens/D6_icon.png" alt="Dado" id="btnDadoFora" onclick="abrirTelaDados()">
         <div id="telaDado">
-            <img src="imagens/D20_icon.png" alt="Dado" id="btnDadoDentro" onclick="fecharTelaDados()">
+            <div class="tela-dado-flex">
+                <div><img src="imagens/D6_icon.png" alt="Dado" id="btnDadoDentro" onclick="fecharTelaDados()"></div>
+
+                <div class="btnDados">
+                    <button type="button" onclick="gerar(4)"><img src="imagens/D4.png" alt=""></button>
+                    <button type="button" onclick="gerar(6)"><img src="imagens/D6.png" alt=""></button>
+                    <button type="button" onclick="gerar(8)"><img src="imagens/D8.png" alt=""></button>
+                    <button type="button" onclick="gerar(10)"><img src="imagens/D10.png" alt=""></button>
+                    <button type="button" onclick="gerar(12)"><img src="imagens/D12.png" alt=""></button>
+                    <button type="button" onclick="gerar(20)"><img src="imagens/D20.png" alt=""></button>
+                    <input type="number" id="addNum" min="1" value="1">
+                </div>
+                <div id="placeholder"></div>
+                <div id="soma">Valor Total:</div>
+            </div>
         </div>
     </div>
 
@@ -113,5 +127,6 @@
     <script src="scripts/infos.js"></script>
     <script src="scripts/salvar.js"></script>
     <script src="scripts/status.js"></script>
+    <script src="scripts/dados.js"></script>
 </body>
 </html>
