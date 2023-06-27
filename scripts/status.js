@@ -12,29 +12,25 @@ function atualizarValorVida() {
 function subVida() {
   var sub = prompt("Quanto de vida você perdeu?");
   var barraVida = document.getElementById("barraVidaProgresso");
-  var valorAtual = parseInt(barraVida.value.split("/")[0]);
-  var valorTotal = parseInt(barraVida.value.split("/")[1]);
-  var novoValor = valorAtual - parseInt(sub);
+  var valorAtualVida = parseInt(barraVida.value.split("/")[0]);
+  var valorTotalVida = parseInt(barraVida.value.split("/")[1]);
+  var novoValorVida = valorAtualVida - parseInt(sub);
 
-  if (!isNaN(novoValor)) {
-    barraVida.value = novoValor + "/" + valorTotal;
-  } else{
-    alert("Não é válido")
-  }
+  novoValorVida = Math.max(novoValorVida, 0); // Verifica se o novo valor é maior ou igual a zero
+
+  barraVida.value = novoValorVida + "/" + valorTotalVida;
 }
 
 function addVida() {
-  var add = prompt("Quanto de vida será adicionado?")
+  var add = prompt("Quanto de vida será adicionado?");
   var barraVida = document.getElementById("barraVidaProgresso");
-  var valorAtual = parseInt(barraVida.value.split("/")[0]);
-  var valorTotal = parseInt(barraVida.value.split("/")[1]);
-  var novoValor = valorAtual + parseInt(add);
+  var valorAtualVida = parseInt(barraVida.value.split("/")[0]);
+  var valorTotalVida = parseInt(barraVida.value.split("/")[1]);
+  var novoValorVida = valorAtualVida + parseInt(add);
 
-  if (!isNaN(novoValor)) {
-    barraVida.value = novoValor + "/" + valorTotal;
-  } else{
-    alert("Não é válido")
-  }
+  novoValorVida = Math.min(novoValorVida, valorTotalVida);
+
+  barraVida.value = novoValorVida + "/" + valorTotalVida;
 }
 
 
@@ -56,11 +52,9 @@ function subEsforco() {
   var valorTotalEsforco = parseInt(barraEsforco.value.split("/")[1]);
   var novoValorEsforco = valorAtualEsforco - parseInt(sub);
 
-  if (!isNaN(novoValorEsforco)) {
-    barraEsforco.value = novoValorEsforco + "/" + valorTotalEsforco;
-  } else {
-    alert("Valor inválido");
-  }
+  novoValorEsforco = Math.max(novoValorEsforco, 0);
+
+  barraEsforco.value = novoValorEsforco + "/" + valorTotalEsforco;
 }
 
 function addEsforco() {
@@ -70,10 +64,8 @@ function addEsforco() {
   var valorTotalEsforco = parseInt(barraEsforco.value.split("/")[1]);
   var novoValorEsforco = valorAtualEsforco + parseInt(add);
 
-  if (!isNaN(novoValorEsforco)) {
-    barraEsforco.value = novoValorEsforco + "/" + valorTotalEsforco;
-  } else {
-    alert("Valor inválido");
-  }
+  novoValorEsforco = Math.min(novoValorEsforco, valorTotalEsforco);
+
+  barraEsforco.value = novoValorEsforco + "/" + valorTotalEsforco;
 }
 
