@@ -16,7 +16,7 @@ function subVida() {
   var valorTotalVida = parseInt(barraVida.value.split("/")[1]);
   var novoValorVida = valorAtualVida - parseInt(sub);
 
-  novoValorVida = Math.max(novoValorVida, 0); // Verifica se o novo valor é maior ou igual a zero
+  novoValorVida = Math.max(novoValorVida, 0);
 
   barraVida.value = novoValorVida + "/" + valorTotalVida;
 }
