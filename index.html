@@ -50,53 +50,40 @@
 
         <form id="menuInfo">
 
-            <div class="jogador"> 
-                <label for="ijogador">Jogador:<input type="text" id="ijogador"></label>
-            </div>
-
-            <hr>
-
-            <div class="container-fisico-info">
-                <div class="fisico">
-                    <label for="ialtura">Altura:<input type="text" id="ialtura" ></label> <br>
-
-                    <label for="icabelo">Cabelo:<input type="text" id="icabelo"></label> <br>
-
-                    <label for="iolhos">Olhos:<input type="text" id="iolhos"></label> <br>
-
-                    <label for="ipele">Pele:<input type="text" id="ipele"></label> <br>
-
-                    <label for="isexo">Sexo:<input type="text" id="isexo"></label> <br>
+            <div class="menu-info-flex">
+                <div class="jogador">
+                    <label for="ijogador">Jogador:<input type="text" id="ijogador"></label>
                 </div>
+                <hr>
+                <div class="container-fisico-info">
+                    <div class="fisico">
+                        <label for="ialtura">Altura:<input type="text" id="ialtura" ></label> <br>
+                        <label for="icabelo">Cabelo:<input type="text" id="icabelo"></label> <br>
+                        <label for="iolhos">Olhos:<input type="text" id="iolhos"></label> <br>
+                        <label for="ipele">Pele:<input type="text" id="ipele"></label> <br>
+                        <label for="isexo">Sexo:<input type="text" id="isexo"></label> <br>
+                    </div>
                 
-                <div class="info">
-                    <label for="iidade">Idade:<input type="text" id="iidade"></label> <br>
-
-                    <label for="iclasse">Classe:<input type="text" id="iclasse"></label> <br>
-
-                    <label for="iprofissão">Profissão:<input type="text" id="iprofissão"></label> <br>
-
+                    <div class="info">
+                        <label for="iidade">Idade:<input type="text" id="iidade"></label> <br>
+                        <label for="iclasse">Classe:<input type="text" id="iclasse"></label> <br>
+                        <label for="iprofissão">Profissão:<input type="text" id="iprofissão"></label> <br>
+                    </div>
                 </div>
-            </div>
-
-            <hr>
-
-            <div class="container-personalidade">
-                <button type="button" class="btnArea" onclick="fecharPer()"></button>
+                <hr>
+                <div class="container-personalidade">
+                    <button type="button" class="btnArea" onclick="fecharPer()"></button>
                 
-                <label for="ipersonalidade">Personalidade:</label>
-
-                <textarea  id="ipersonalidade" oninput="ajustarTamanhoTextarea(this)" placeholder="Fale um pouco sobre o seu personagem"></textarea>
-            </div>
-
-            <hr>
-
-            <div class="container-historia">
-                <button type="button" class="btnArea" onclick="fecharHis()"></button>
+                    <label for="ipersonalidade">Personalidade:</label>
+                    <textarea  id="ipersonalidade" oninput="ajustarTamanhoTextarea(this)" placeholder="Fale um pouco sobre o seu personagem"></textarea>
+                </div>
+                <hr>
+                <div class="container-historia">
+                    <button type="button" class="btnArea" onclick="fecharHis()"></button>
                 
-                <label for="ihistoria">História:</label> 
-
-                <textarea  id="ihistoria" oninput="ajustarTamanhoTextarea(this)" placeholder="Fale um pouco sobre a história do seu personagem"></textarea>
+                    <label for="ihistoria">História:</label>
+                    <textarea  id="ihistoria" oninput="ajustarTamanhoTextarea(this)" placeholder="Fale um pouco sobre a história do seu personagem"></textarea>
+            </div>
             </div>
 
         </form>
@@ -104,22 +91,35 @@
 
     <!--Status de vida e outros-->
     <div class="container-area-status">
-
         <div class="container-status">
-            <p>Pontos de vida</p>
-    
-            <div class="container-barra">
-                <div class="barra-status" id="barraVida" onclick="definirVidaTotal()">
-                    <div class="barra-progresso" id="barraProgressoVida"><span class="numero-vida" id="numeroVida"></span></div>
-                </div>
+            <p>PV</p>
+
+            <!--Barra de vida-->
+            <div> 
+                <label for="barraVidaProgresso" class="barra-vida" onclick="atualizarValorVida()"><span id="barraVidaCor"><input type="text" id="barraVidaProgresso" value="0/0"></span></label>
             </div>
-    
-            <div class="container-add-sub">
-                <button type="button" id="subVida" class="sub" onclick="subtrairVida()"></button>
-                <button type="button" id="addVida" class="add" onclick="adicionarVida()"></button> 
+
+            <!--Adicionar e subtrair barra de vida-->
+            <div class="container-sub-add">
+                <button type="button" id="subVida" class="btn-sub-add" onclick="subVida()"></button>
+                <button type="button" id="addVida" class="btn-sub-add" onclick="addVida()"></button>
             </div>
         </div>
-    
+
+        <div class="container-status">
+            <p>PE</p>
+
+            <!--Barra de esforço-->
+            <div> 
+                <label for="barraEsforcoProgresso" class="barra-esforco" onclick="atualizarValorEsforco()"><span id="barraEsforcoCor"><input type="text" id="barraEsforcoProgresso" value="0/0"></span></label>
+            </div>
+
+            <!--Adicionar e subtrair barra de vida-->
+            <div class="container-sub-add">
+                <button type="button" id="subEsforco" class="btn-sub-add" onclick="subEsforco()"></button>
+                <button type="button" id="addEsforco" class="btn-sub-add" onclick="addEsforco()"></button>
+            </div>
+        </div>
     </div>
 
     <script src="scripts/menuDado.js"></script>

@@ -205,6 +205,10 @@ html{
 
 /*Menu de informações*/
 #menuInfo{
+    display: none;
+}
+
+.menu-info-flex{
     display: flex;
     flex-direction: column;
     border: 1px solid white;
@@ -244,6 +248,7 @@ html{
 }
 
 #ipersonalidade{
+    display: none;
     background-color: #000000;
     width: 95%;
     overflow: hidden;
@@ -276,6 +281,7 @@ html{
 }
 
 #ihistoria{
+    display: none;
     background-color: #000000;
     width: 95%;
     overflow: hidden;
@@ -287,81 +293,110 @@ html{
 
 /*Barras de Status*/
 .container-area-status{
+    padding: 10px;
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
-}
-
-.container-status{
-    display: flex;
-    flex-direction: column;
-}
-
-.container-barra{
-    display: flex;
-    flex-direction: row;
+    justify-items: center;
     align-items: center;
 }
 
-.barra-status{
-    display: flex;
-    border: 1px solid #ffffff;
-    width: 170px;
-    height: 20px;
+.container-status{
+    padding: 5px;
 }
 
-.barra-progresso{
-    background-color: #ff0e0e;
-    width: 100%;
-    height: 100%;
-    transition: width 1s;
+.barra-vida{
+    border: 1px solid #1aca1a;
+    margin-top: 0px;
 }
 
-.numero-vida{
-    position: absolute;
-    width: 170px;
+#barraVidaCor{
+    background-color: #09ff0018;
+}
+
+#barraVidaProgresso{
+    background-color: #00000000;
     text-align: center;
+    font-size: 16px;
 }
 
-.container-add-sub{
+.container-sub-add{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin: 10px 0px;
 }
 
-.sub{
-    cursor: pointer;
+.container-sub-add img{
+    width: 20px;
+    background-color: #00000000;
     border: 1px solid white;
     border-radius: 50%;
-    margin-top: 10px;
-    width: 20px;
-    height: 20px;
-    background-image: url(../imagens/icone-menos-branco.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+    padding: 1px;
+
 }
 
-.sub:active{
+.btn-sub-add{
+    width: 25px;
+    height: 25px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: #00000000;
+}
+
+#subVida{
+    background-image: url(../imagens/icone-menos-branco.png);
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+}
+
+#subVida:active{
     background-image: url(../imagens/icone-menos-preto.png);
 }
 
-.add{
-    cursor: pointer;
-    border: 1px solid white;
-    border-radius: 50%;
-    margin-top: 10px;
-    width: 20px;
-    height: 20px;
+#addVida{
     background-image: url(../imagens/icone-mais-branco.png);
-    background-size: cover;
-    background-repeat: no-repeat;
     background-position: center center;
+    background-size: cover;
+    cursor: pointer;
 }
 
-.add:active{
+#addVida:active{
     background-image: url(../imagens/icone-mais-preto.png);
 }
 
+.barra-esforco{
+    border: 1px solid #2d1eff;
+}
 
+#barraEsforcoCor{
+    background-color: #2d1eff18;
+}
 
+#barraEsforcoProgresso{
+    background-color: #00000000;
+    text-align: center;
+    font-size: 16px;
+}
+
+#subEsforco{
+    background-image: url(../imagens/icone-menos-branco.png);
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+}
+
+#subEsforco:active{
+    background-image: url(../imagens/icone-menos-preto.png);
+}
+
+#addEsforco{
+    background-image: url(../imagens/icone-mais-branco.png);
+    background-position: center center;
+    background-size: cover;
+    cursor: pointer;
+}
+
+#addEsforco:active{
+    background-image: url(../imagens/icone-mais-preto.png);
+}
