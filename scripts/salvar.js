@@ -16,6 +16,8 @@ function salvarDados() {
       profissao: document.getElementById("iprofissão").value,
       alturaTextarea: document.getElementById("ipersonalidade").style.height,
       alturaTextareaH: document.getElementById("ihistoria").style.height,
+      barraVidaProgresso: document.getElementById("barraVidaProgresso").value,
+      barraEsforcoProgresso: document.getElementById("barraEsforcoProgresso").value
     };
   
     localStorage.setItem("dadosPagina", JSON.stringify(dados));
@@ -41,6 +43,8 @@ function salvarDados() {
       document.getElementById("iprofissão").value = dados.profissao;
       document.getElementById("ipersonalidade").style.height = dados.alturaTextarea;
       document.getElementById("ihistoria").style.height = dados.alturaTextareaH;
+      document.getElementById("barraVidaProgresso").value = dados.barraVidaProgresso;
+      document.getElementById("barraEsforcoProgresso").value = dados.barraEsforcoProgresso;
     }
   }
   
@@ -61,6 +65,8 @@ function salvarDados() {
   document.getElementById("iidade").addEventListener("input", salvarDados);
   document.getElementById("iclasse").addEventListener("input", salvarDados);
   document.getElementById("iprofissão").addEventListener("input", salvarDados);
+  document.getElementById("barraVidaProgresso").addEventListener("input", salvarDados);
+  document.getElementById("barraEsforcoProgresso").addEventListener("input", salvarDados);
 
   // Função para converter uma imagem em base64
 function converterImagemParaBase64(arquivo) {
@@ -104,9 +110,3 @@ function converterImagemParaBase64(arquivo) {
   
   // Vincular a função salvarImagem() ao evento de alteração do input de imagem
   document.getElementById("addFoto").addEventListener("change", salvarImagem);
-
-  
-  
-
-  
-  

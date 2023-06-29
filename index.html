@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <!--Menu da rolagem de dados-->
+    <!--Menu dos dados-->
     <div>
         <img src="imagens/D6_icon.png" alt="Dado" id="btnDadoFora" onclick="abrirTelaDados()">
         <div id="telaDado">
@@ -45,18 +45,16 @@
 
     <!--Menu de informações-->
     <div class="container-menu-info">
-
-        <abbr title="Abrir Menu de informações"><button type="button" id="btnMenuInfo" onclick="abrirmenuinfo()"></button></abbr>
-
         <form id="menuInfo">
-
             <div class="menu-info-flex">
-                <div class="jogador">
+                <div class="jogador" id="jogador">
                     <label for="ijogador">Jogador:<input type="text" id="ijogador"></label>
+                    <button type="button" id="btnMenuInfo" onclick="abrirOuFecharMenu()">ABRIR</button>
                 </div>
-                <hr>
-                <div class="container-fisico-info">
+
+                <div class="container-fisico-info" id="menuFis">
                     <div class="fisico">
+                        <hr>
                         <label for="ialtura">Altura:<input type="text" id="ialtura" ></label> <br>
                         <label for="icabelo">Cabelo:<input type="text" id="icabelo"></label> <br>
                         <label for="iolhos">Olhos:<input type="text" id="iolhos"></label> <br>
@@ -64,7 +62,7 @@
                         <label for="isexo">Sexo:<input type="text" id="isexo"></label> <br>
                     </div>
                 
-                    <div class="info">
+                    <div class="info" id="Info"> 
                         <label for="iidade">Idade:<input type="text" id="iidade"></label> <br>
                         <label for="iclasse">Classe:<input type="text" id="iclasse"></label> <br>
                         <label for="iprofissão">Profissão:<input type="text" id="iprofissão"></label> <br>
@@ -72,18 +70,22 @@
                 </div>
                 <hr>
                 <div class="container-personalidade">
-                    <button type="button" class="btnArea" onclick="fecharPer()"></button>
-                
-                    <label for="ipersonalidade">Personalidade:</label>
+                    <div class="btn-per">
+                        <label for="ipersonalidade">Personalidade:</label>
+                        <button type="button" class="btnArea" id="btnPer" onclick="fecharPer()">ABRIR</button>
+                    </div>
+
                     <textarea  id="ipersonalidade" oninput="ajustarTamanhoTextarea(this)" placeholder="Fale um pouco sobre o seu personagem"></textarea>
                 </div>
                 <hr>
                 <div class="container-historia">
-                    <button type="button" class="btnArea" onclick="fecharHis()"></button>
-                
-                    <label for="ihistoria">História:</label>
-                    <textarea  id="ihistoria" oninput="ajustarTamanhoTextarea(this)" placeholder="Fale um pouco sobre a história do seu personagem"></textarea>
-            </div>
+                    <div class="btn-his">
+                        <label for="ihistoria">História:</label>
+                        <button type="button" class="btnArea" id="btnHis" onclick="fecharHis()">ABRIR</button>
+                    </div>
+
+                    <div><textarea  id="ihistoria" oninput="ajustarTamanhoTextarea(this)" placeholder="Fale um pouco sobre a história do seu personagem"></textarea></div>
+                </div>
             </div>
 
         </form>
@@ -96,7 +98,7 @@
 
             <!--Barra de vida-->
             <div> 
-                <label for="barraVidaProgresso" class="barra-vida" onclick="atualizarValorVida()"><span id="barraVidaCor"><input type="text" id="barraVidaProgresso" value="0/0"></span></label>
+                <label for="barraVidaProgresso" class="barra-vida" onclick="atualizarValorVida()"><span id="barraVidaCor"><input type="text" id="barraVidaProgresso"></span></label>
             </div>
 
             <!--Adicionar e subtrair barra de vida-->
@@ -111,7 +113,7 @@
 
             <!--Barra de esforço-->
             <div> 
-                <label for="barraEsforcoProgresso" class="barra-esforco" onclick="atualizarValorEsforco()"><span id="barraEsforcoCor"><input type="text" id="barraEsforcoProgresso" value="0/0"></span></label>
+                <label for="barraEsforcoProgresso" class="barra-esforco" onclick="atualizarValorEsforco()"><span id="barraEsforcoCor"><input type="text" id="barraEsforcoProgresso"></span></label>
             </div>
 
             <!--Adicionar e subtrair barra de vida-->
@@ -125,7 +127,6 @@
     <script src="scripts/menuDado.js"></script>
     <script src="scripts/fotoPerfil.js"></script>
     <script src="scripts/infos.js"></script>
-    <script src="scripts/salvar.js"></script>
     <script src="scripts/status.js"></script>
     <script src="scripts/dados.js"></script>
 </body>

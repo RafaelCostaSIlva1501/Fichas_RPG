@@ -1,7 +1,7 @@
 function atualizarValorVida() {
   var vida = prompt("Valor total de vida");
   var valorTotal = vida
-  var valorAtual = vida 
+  var valorAtual = vida
   var barraVida = document.getElementById("barraVidaProgresso")
 
   if (valorTotal !== null) {
@@ -68,4 +68,6 @@ function addEsforco() {
 
   barraEsforco.value = novoValorEsforco + "/" + valorTotalEsforco;
 }
+
+
 

@@ -188,13 +188,12 @@ html{
 
 #btnMenuInfo{
     cursor: pointer;
-    width: 60px;
+    width: 70px;
     height: 15px;
-    padding: 5px;
-    margin-bottom: 10px;
-    border-radius: 3px;
+    border-radius: 2px;
     border: 1px solid #474747;
     background-color: #000000;
+    font-size: 10px;
 }
 
 #btnMenuInfo:active{
@@ -205,7 +204,7 @@ html{
 
 /*Menu de informações*/
 #menuInfo{
-    display: none;
+    display: block;
 }
 
 .menu-info-flex{
@@ -214,7 +213,7 @@ html{
     border: 1px solid white;
     width: 95vw;
     height: max-content;
-    padding: 10px;
+    padding: 0px 10px 10px 10px;
 }
 
 #menuInfo label{
@@ -233,18 +232,22 @@ html{
 
 .jogador{
     display: flex;
-    margin-left: 5px;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .container-fisico-info{
-    display: flex;
-    flex-direction: column;
+    display: none;
 }
 
 .container-personalidade{
     display: flex;
     flex-direction: column;
-    align-items: center;
+}
+
+.btn-per{
+    display: flex;
+    justify-content: space-between;
 }
 
 #ipersonalidade{
@@ -261,17 +264,21 @@ html{
 .container-historia{
     display: flex;
     flex-direction: column;
-    align-items: center;
+}
+
+.btn-his{
+    display: flex;
+    justify-content: space-between;
 }
 
 .btnArea{
-    margin: 5px 0px 0px 0px;
     cursor: pointer;
     width: 70px;
-    height: 10px;
+    height: 15px;
     border-radius: 2px;
     border: 1px solid #474747;
     background-color: #000000;
+    font-size: 10px;
 }
 
 .btnArea:active{
